@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHA ACOUSTIC</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menukiri">
+                <ul>
+                    <li><a href="index.html">kembali</a></li>
+                </ul>
+            </div>
+            <div class="judulkanan">
+                <h1 class="judul">MHA ACOUSTIC</h1>
+            </div>
+        </div>
+        <div class="kotak"></div>
+        <div class="hero"></div>
+
+        <div class="content cf">
+            <div class="main">
+                <h2 style="margin-left: 313px;">Checkout</h2>
+                <!--Tempatkan daftar produk di atas formulir-->
+                <h3 style="margin-left: 321px;">Daftar Produk dalam Keranjang Belanja</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="200px" style="text-align: center;">Nama Produk</th>
+                            <th width="10px" style="text-align: center;">Jumlah Barang</th>
+                            <th width="20px" style="text-align: center;">Harga</th>
+                            <th width="150px" style="text-align: center;">Jumlah Harga</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="daftar-keranjang">
+                        <!--Baris tabel akan ditambahkan di sini-->
+                    </tbody>
+                    <tbody>
+                        <!--Baris tabel akan ditambahkan di sini-->
+                        <tr>
+                            <td style="text-align: center;" colspan="3">Total Belanja:</td>
+                            <td style='text-align: right;'><span id="total-belanjanya">-</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+
+                <!--Formulir checkout-->
+                <form id="formulir-checkout" action="invoice.html" method="post">
+                    <h2>Informasi pengiriman</h2>
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" name="nama" required><br>
+
+                    <label for="alamat">Alamat Pengiriman:</label>
+                    <textarea id="alamat" name="alamat" required rows="3" cols="60"></textarea><br>
+
+                    <label for="rt">RT/RW:</label>
+                    <input type="number" id="rt" name="rt" required> / <input type="number" id="rw" name="rw"
+                        required><br>
+
+                    <label for="desa">Desa:</label>
+                    <input type="text" id="desa" name="desa" required><br>
+
+                    <label for="kecamatan">Kecamatan:</label>
+                    <input type="text" id="kecamatan" name="kecamatan" required><br>
+
+                    <label for="kota">Kota:</label>
+                    <input type="text" id="kota" name="kota" required><br>
+
+                    <label for="kode-pos">Kode Pos:</label>
+                    <input type="number" id="kode-pos" name="kode-pos" required><br>
+
+                    <label for="ongkir">Ongkos Kirim:</label>
+                    <select name="ongkir" id="ongkir" required>
+                        <option value="100000">jawa barat</option>
+                        <option value="50000">jawa tengah </option>
+                        <option value="25000">jawa timur</option>
+                        <!-- Tambahkan bank-bank lainnya sesuai kebutuhan -->
+                    </select><br>
+
+                    <h2>Informasi Kontak</h2>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <label for="telepon">Nomor Telepon:</label>
+                    <input type="tel" id="telepon" name="telepon" required><br>
+
+                    <h2>Informasi Pembayaran (Rekening Bank)</h2>
+                    <p>Segera selesaikan proses pembelian, dengan cara melakukan transfer sesuai jumlah yang
+                        tertera pada Total Belanja di atas ke nomor rekening Toko Pertanian.</p>
+
+                    <label for="bank">Bank:</label>
+                    <select id="bank" name="bank" required>
+                        <option value="bca">BCA (Bank Central Asia)</option>
+                        <option value="bni">BNI (Bank Negara Indonesia) </option>
+                        <option value="mandiri">Mandiri (Bank Mandiri)</option>
+                        <option value="bri">BRI (Bank Rakyat Indonesia) </option>
+                        <!-- Tambahkan bank-bank lainnya sesuai kebutuhan -->
+                    </select><br>
+
+                    <label for="nomor-rekening">Nomor Rekening:</label>
+                    <input type="text" id="nomor-rekening" name="nomor rekening" required><br>
+
+                    <label for="nama-rekening">Nama Pemegang Rekening:</label>
+                    <input type="text" id="nama-rekening" name="nama-rekening" required><br>
+
+                    <label for="cabang">Cabang Bank (opsional):</label>
+                    <input type="text" id="cabang" name="cabang"><br>
+
+                    <button id="selesaikan-pembayaran" onclick="selesaikanPembayaran ()">Selesaikan Pembayaran</button>
+                </form>
+
+            
+
+            </div>
+        </div>
+        <div class="footer">
+            <p class="copyright">Copyright 2023. MHA ACOUSTIC</p>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+
+</html>

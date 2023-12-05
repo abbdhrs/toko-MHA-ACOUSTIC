@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHA ACOUSTIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menukiri">
+                <ul>
+                    <li><a href="#kotak">Home</a></li>
+                    <li><a href="#product">Produk</a></li>
+                    <li><a href="contact.html">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            <div class="judulkanan">
+                <h1 class="judul">MHA ACOUSTIC</h1>
+            </div>
+        </div>
+        <div id="kotak"></div>
+        <div class="Kontak"></div>
+        <div id="hero"></div>
+        <div class="content">
+            <div class="main">
+                <h2>Produk Terbaru</h2>
+
+                <section id="product" data-kategori="gitar">
+                    <a href="produk1.html"><img src="gitar 1.jpg" alt="Produk 1"></a>
+                    <h3>Gitar Yamaha C135</h3>
+                    <p>Murah dan berkualitas</p>
+                    <p class="price">Harga: Rp 600.000</p>
+                    <button class="tombol-beli"
+                        onclick="tampilkanDetailProduk('Yamaha C135','600.000','C315 mungkin merupakan salah satu model klasik ukuran penuh paling murah dari Yamaha, namun kualitas dan nadanya luar biasa. Tawaran yang nyata untuk pemula.','gitar 1.jpg')">detail</button>
+                    <button class="tombol-keranjang" onclick="tambahkanProdukKeKeranjang('Gitar Yamaha C135', 600000)">Tambahkan ke Keranjang</button>
+                </section>
+
+                <section id="product" data-kategori="gitar">
+                    <a href="produk2.html"><img src="gitar 2.jpg" alt="Produk 2"></a>
+                    <h3>Gitar Yamaha APX</h3>  
+                    <P>Gitar paling recomend</P>
+                    <p class="price">Harga: Rp 900.000</p>
+                    <button class="tombol-beli"
+                        onclick="tampilkanDetailProduk('Yamaha APX','900.000','Seri tertinggi APX adalah APX1200 yang memiliki bagian belakang dan samping body berbahan solid-rosewood, sistem pickup mic-modelling Yamaha SRT dan tampilan menawan dengan body-binding berbahan kayu mahoni, tuning machine bertombol hitam, dan inlay abalon yang terinspirasi oleh SG3000 yang legendaris.','gitar 2.jpg')">detail</button><br>
+                    <button class="tombol-keranjang" onclick="tambahkanProdukKeKeranjang('Gitar APX',900000)">Tambahkan ke Keranjang</button><br>
+                </section>
+
+                <section id="product" data-kategori="gitar" >
+                    <a href="produk3.html"><img src="gitar 3.jpg" alt="Produk 3"></a>
+                    <h3>Gitar Cowboy</h3>
+                    <P>Gitar paling bergaya</P>
+                    <p class="price">Harga: Rp 1.800.000</p>
+                    <button class="tombol-beli"
+                        onclick="tampilkanDetailProduk('Gitar Cowboy','800.000','deskipsi','gitar 3.jpg')">detail</button><br>
+                    <button class="tombol-keranjang" onclick="tambahkanProdukKeKeranjang('Gitar Cowboy',1800000)">Tambahkan ke Keranjang</button><br>
+                </section>
+
+                <section id="product" data-kategori="aksesoris" class="product">
+                    <a href="produk4.html"><img src="senar gitar.jpg" alt="Produk 4"></a>
+                    <h3>Fender Senar Gitar Bass Electrik</h3>
+                    <P>1 Set isi 4 Senar</P>
+                    <p class="price">Harga: Rp 15.000</p>
+                    <button class="tombol-beli"
+                        onclick="tampilkanDetailProduk('Senar Gitar Bass Electrik','15.000','Senar gitar fender isi 4 pcs dan silahkan isi varian sesuai no yang mau di beli , harga murah kwalitas mewah dan terjamin puas. Yu beli senar nya untuk menghibur dan bersenang senang bersama teman TERIMA KASIH','senar gitar.jpg')">detail</button><br>
+                        <button class="tombol-keranjang" onclick="tambahkanProdukKeKeranjang('Senar Gitar Bass Electrik',15000)">Tambahkan ke Keranjang</button><br>
+                    </section>
+
+                <section id="product" data-kategori="aksesoris" class="product">
+                    <a href="produk5.html"><img src="pick gitar.jpg" alt="Produk 5"></a>
+                    <h3>Pick Gitar Murah</h3>
+                    <P>murah banget isi 4</P>
+                    <p class="price">Harga: Rp 20.000</p>
+                    <button class="tombol-beli"
+                        onclick="tampilkanDetailProduk('Pick Gitar Murah','20.000','deskipsi','pick gitar.jpg')">detail</button><br>
+                    <button class="tombol-keranjang" onclick="tambahkanProdukKeKeranjang('Pick Gitar Murah',20000)">Tambahkan ke Keranjang</button><br>
+                </section>
+
+                <section id="product" data-kategori="kentrung" class="product">
+                    <a href="produk6.html"><img src="kentrung.jpg" alt="Produk 6"></a>
+                    <h3>Kentrung Kece</h3>
+                    <P>Kentrung yamaha murah dan berkualitas</P>
+                    <p class="price">Harga: Rp 300.000</p>
+                    <button class="tombol-beli"
+                        onclick="tampilkanDetailProduk('Kentrung Kece','300.000','deskipsi','kentrung.jpg')">detail</button><br>
+                    <button class="tombol-keranjang" onclick="tambahkanProdukKeKeranjang('Kentrung Kece',300000)">Tambahkan ke Keranjang</button><br>
+                </section>
+            </div>
+            <div class="sidebar">
+                <h3>Kategori</h3>
+                <div class="kategori-pilihan">
+                    <input type="text" id="cariBarang" placeholder="Cari Barang.." onkeyup="cariBarang()"><br>
+                    <button onclick="filterKategori('all')">Semua</button><br>
+                    <button onclick="filterKategori('gitar')">Gitar</button><br>
+                    <button onclick="filterKategori('aksesoris')">Aksesoris</button><br>
+                    <button onclick="filterKategori('kentrung')">Kentrung</button><br>
+                </div>
+                <br><br>
+
+                <div class="keranjang">
+                    <h3>Keranjang Belanja</h3>
+                    <ul id="daftar-keranjang"></ul>
+                    <p>Total Belanja: <span id="total-belanja">$0.00</span></p>
+                    <button id="checkout" onclick="checkout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="copyright">Copyright 2023. MHA ACOUSTIC</p>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

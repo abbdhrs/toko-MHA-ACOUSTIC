@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHA ACOUSTIC</title>
+    <!-- <script src="index.js"></script> -->
+    <link rel="import" href="checkout.html">
+    <link rel="stylesheet" href="invoice.css">
+    <style>
+        .clear {
+            clear: both;
+        }
+
+        .main-invoice {
+            width: 650px;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+            float: left;
+        }
+
+        .main-invoice h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .main-invoice h3 {
+            font-size: 16px;
+            font-weight: bold;
+            font-style: italic;
+
+        }
+
+        /* style untk tombol cetak invoice */
+
+        .main-invoice button {
+            background-color: black;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+
+        }
+
+        .main-invoice button:hover {
+            background-color: aqua;
+            color: aliceblue;
+
+        }
+
+        .datapem td {
+            border: 0px solid white;
+            color: black;
+            background-color: #fff;
+            line-height: 17px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menukiri">
+                <ul>
+                    <li><a href="checkout.html">kembali</a></li>
+                </ul>
+            </div>
+            <div class="judulkanan">
+                <h1 class="judul">MHA ACOUSTIC</h1>
+            </div>
+        </div>
+        <div class="kotak"></div>
+        <div class="hero"></div>
+        <div class="content" id="cetakke">
+            <div class="main-invoice">
+                <h2>invoice Pembayaran</h2>
+
+                <h3>Informasi Pengiriman</h3>
+                <table class="datapem">
+                    <tr>
+                        <td width="150px">Nama Pelanggan</td>
+                        <td>:</td>
+                        <td width="450px"><span id="invoice-nama"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Alamat Pengiriman</td>
+                        <td>:</td>
+                        <td><span id="invoice-alamat"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td><span id="invoice-email"></span></td>
+                    </tr>
+                    <tr>
+                        <td>No. Telepon</td>
+                        <td>:</td>
+                        <td><span id="invoice-telepon"></span></td>
+                    </tr>
+                </table>
+                <br />
+
+                <h3>Data Pembayaran</h3>
+                <table class="datapem">
+                    <tr>
+                        <td width="150px">Nama Lengkap</td>
+                        <td>:</td>
+                        <td width="450px"><span id="invoice-pengirim"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Nomor Rekening</td>
+                        <td>:</td>
+                        <td><span id="invoice-rek"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Bank</td>
+                        <td>:</td>
+                        <td><span id="invoice-bank"></span>; Kantor Cabang: <span id="invoice-cabang"></span></td>
+                    </tr>
+                </table>
+                <br />
+
+                <h3>Rincian pembelian</h3>
+                <table>
+                    <thead>
+                        <tr style="text-align: center; align-items: center; align-content: center;align-self: center;">
+                            <th width="200px" style="text-align: center;">Nama Produk</th>
+                            <th width="10px" style="text-align: center;">Jumlah</th>
+                            <th width="20px" style="text-align: center;">Harga</th>
+                            <th width="150px" style="text-align: center;">Jumlah Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody id="daftar-keranjang">
+                        <!--Baris tabel akan ditambahkan di sini-->
+                    </tbody>
+                    <tbody>
+                        <!--Baris tabel akan ditambahkan di sini-->
+                        <tr style="background-color: #fff; color: #000;">
+                            <td style="text-align: left;" colspan="3">Total Belanja</td>
+                            <td style="text-align: right;"><span id="total-belanjanya">$0.00</span></td>
+                        </tr>
+                        <tr style="background-color: #fff; color: #000;">
+                            <td style="text-align: left;" colspan="3">Ongkos Kirim</td>
+                            <td style="text-align: right;"><span id="invoice-ongkir"></span></td>
+                        </tr>
+                        <tr style="background-color: #fff; color: #000;">
+                            <td style="text-align: left;" colspan="3">Total Pembayaran</td>
+                            <td style="text-align: right;"><span id="invoice-total"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <h3>Informasi Pembayaran (Rekening Bank)</h3>
+                <p>Silahkan transfer sejumlah Total Pembayaran (<span id="total-bayar"></span> ) ke nomor rekening
+                    berikut:</p>
+                <ul>
+                    <li><span id="invoice-rekening"></span></li>
+                </ul>
+                <p>Kantor Cabang : Kajen</p><br />
+
+                <!--Tambahkan tombol "Cetak Invoice" untuk mencetak halaman-->
+
+                <button onclick="cetakInvoice('cetakke')">Cetak Invoice</button>
+
+                <br><br>
+
+                <button id="selesai" onclick="selesai()">selesai</button>
+
+            </div>
+
+            <div class="sidebar">
+                <!-- keranjang kuning -->
+                <br /><br />
+                <div class="keranjang">
+                    <h3>invoice</h3>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="footer">
+                <p class="copyright">Copyright 2023. MHA ACOUSTIC</p>
+            </div>
+        </div>
+    </div>
+
+<script src="invoice.js"></script>
+</body>
+
+</html>
