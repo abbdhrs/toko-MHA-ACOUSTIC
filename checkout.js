@@ -36,6 +36,8 @@ document.getElementById('selesaikan-pembayaran').addEventListener('click', funct
 });
 
 function selesaikanPembayaran() {
+    window.location.href="invoice.html";
+    
     const namaPelanggan = document.getElementById('nama').value;
     const alamat = document.getElementById('alamat').value;
     const rt = document.getElementById('rt').value;
