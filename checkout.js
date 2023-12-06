@@ -31,6 +31,10 @@ keranjangBelanja.forEach((produk) => {
 
 totalbelanjaElem.textContent = `${total.toLocaleString("id-ID")}`;
 
+document.getElementById('selesaikan-pembayaran').addEventListener('click', function() {
+    window.location.href = 'invoice.html';
+});
+
 function selesaikanPembayaran() {
     const namaPelanggan = document.getElementById('nama').value;
     const alamat = document.getElementById('alamat').value;
@@ -63,6 +67,4 @@ function selesaikanPembayaran() {
     sessionStorage.setItem('nomor-rekening', JSON.stringify(namaRekening));
 }
 
-document.getElementById('selesaikan-pembayaran').addEventListener('click', function() {
-    window.location.href = 'invoice.html';
-});
+
